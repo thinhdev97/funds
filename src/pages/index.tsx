@@ -36,7 +36,7 @@ function* scroll(index: number) {
 }
 
 export default function Home({ sponsorshipList, date }: any) {
-  const list = sponsorshipList.slice(1, sponsorshipList.length).reverse();
+  const list = sponsorshipList.slice(1, sponsorshipList.length);
   const total = sponsorshipList[0].total;
   const [iterator] = useState(scroll(0));
 
