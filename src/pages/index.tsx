@@ -18,8 +18,8 @@ const roboto = Roboto({
   weight: ["300", "700", "900"],
 });
 
-const STEP = 3;
-const TIME = 70;
+const STEP = 1;
+const TIME = 100;
 const TIME_REFRESH_DATA = 5 * 60 * 1000;
 
 function* scroll(index: number) {
