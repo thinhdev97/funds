@@ -19,7 +19,7 @@ const roboto = Roboto({
 });
 
 const STEP = 1;
-const TIME = 100;
+const TIME = 200;
 const TIME_REFRESH_DATA = 5 * 60 * 1000;
 
 function* scroll(index: number) {
