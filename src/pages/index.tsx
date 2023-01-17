@@ -5,6 +5,9 @@ import { getSponsorshipList } from "@/libs/sheets";
 import { useState } from "react";
 import { useInterval } from "usehooks-ts";
 
+import dao from "@/assets/dao.png"
+import mai from "@/assets/mai.png"
+
 const oswald = Oswald({ subsets: ["latin-ext", "vietnamese", "latin"] });
 const pacifico = Pacifico({
   subsets: ["latin", "vietnamese"],
@@ -73,19 +76,16 @@ export default function Home({ sponsorshipList, date }: any) {
         <div className="snowflake">❀</div>
         <div className="snowflake snowflake3">✿</div>
         <Image
-          src="/mai.png"
+          src={mai}
           alt="mai"
-          width={417}
-          height={279}
-          className="object-contain fixed left-0 z-20"
-          priority
+          className="object-contain fixed left-0 z-20 w-[200px] md:w-[300px] xl:w-[417px]"
+          // width={417}
+          // height={279}
         />
         <Image
-          src="/dao.png"
+          src={dao}
           alt="dao"
-          width={417}
-          height={279}
-          className="object-contain fixed right-0 z-20"
+          className="object-contain fixed right-0 z-20 w-[200px] md:w-[300px] xl:w-[417px]"
         />
         <div className={`${oswald.className} max-w-4xl flex-1`}>
           <div className="text-center text-blue-800 sticky top-0 z-10 bg-white">
@@ -94,16 +94,19 @@ export default function Home({ sponsorshipList, date }: any) {
               <h2>BAN CHỈ ĐẠO ĐÓN TẾT</h2>
             </div>
             <div
-              className={`${pacifico.className} text-4xl mb-4 capitalize leading-normal text-rose-500`}
+              className={`${pacifico.className} mb-4 capitalize leading-normal text-rose-500 text-2xl md:text-4xl`}
             >
               <h1>Văn Nghệ</h1>
               <h2>Mừng đảng mừng xuân quý mão 2023</h2>
             </div>
             <div>
-              <h2 className="text-3xl font-bold leading-normal text-blue-800">
+              <h2 className="font-bold leading-normal text-blue-800 text-xl md:text-2xl xl:text-3xl hidden md:block">
                 GÂY QUỸ GIÚP ĐỠ CÁC HOÀN CẢNH ĐẶC BIỆT KHÓ KHĂN
                 <br />
                 TRÊN ĐỊA BÀN XÃ XUÂN SƠN NAM
+              </h2>
+              <h2 className="font-bold leading-normal text-blue-800 text-xl md:text-2xl xl:text-3xl md:hidden">
+                GÂY QUỸ GIÚP ĐỠ CÁC HOÀN CẢNH ĐẶC BIỆT KHÓ KHĂN TRÊN ĐỊA BÀN XÃ XUÂN SƠN NAM
               </h2>
             </div>
             <h3 className="mb-6">Xuân Sơn Nam, ngày 17 tháng 01 năm 2023</h3>
@@ -111,7 +114,7 @@ export default function Home({ sponsorshipList, date }: any) {
               Tổng số tiền quyên góp (cập nhật lúc {date}
               ):
             </p>
-            <h2 className="text-5xl font-bold text-yellow-600 mb-4">{total}</h2>
+            <h2 className="font-bold text-yellow-600 mb-4 text-3xl md:text-4xl xl:text-5xl">{total}</h2>
 
             <p style={roboto.style} className="mb-4 ml-2 text-left text-black">
               Chân thành cảm ơn các mạnh thường quân:
