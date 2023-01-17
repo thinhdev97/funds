@@ -107,7 +107,7 @@ export default function Home({ sponsorshipList, date }: any) {
             </div>
             <h3 className="mb-6">Xuân Sơn Nam, ngày 17 tháng 01 năm 2023</h3>
             <p className="font-roboto ml-2 text-left text-black">
-              Tổng số tiền quyên góp (cập nhật lúc {date}
+              Tổng số tiền quyên góp (cập nhật lúc {date?.toLocaleString()}
               ):
             </p>
             <h2 className="font-bold text-yellow-600 mb-4 text-3xl md:text-4xl xl:text-5xl">{total}</h2>
@@ -172,7 +172,7 @@ export async function getStaticProps() {
   return {
     props: {
       sponsorshipList,
-      date: new Date().toLocaleString(),
+      date: new Date(),
     },
     revalidate: 60 * 60, // In seconds
   };
