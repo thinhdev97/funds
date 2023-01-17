@@ -1,22 +1,18 @@
 import Head from "next/head";
-import { Oswald, Pacifico, Roboto } from "@next/font/google";
 import Image from "next/image";
 import { getSponsorshipList } from "@/libs/sheets";
 import { useState } from "react";
 import { useInterval } from "usehooks-ts";
+import "@fontsource/oswald/400.css";
+import "@fontsource/oswald/700.css";
+import "@fontsource/pacifico";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/900.css";
 
 import dao from "@/assets/dao.png"
 import mai from "@/assets/mai.png"
 
-const oswald = Oswald({ subsets: ["latin-ext", "vietnamese", "latin"] });
-const pacifico = Pacifico({
-  subsets: ["latin", "vietnamese"],
-  weight: "400",
-});
-const roboto = Roboto({
-  subsets: ["latin", "vietnamese"],
-  weight: ["300", "700", "900"],
-});
 
 const STEP = 1;
 const TIME = null;
@@ -87,14 +83,14 @@ export default function Home({ sponsorshipList, date }: any) {
           alt="dao"
           className="object-contain fixed right-0 z-20 w-[200px] md:w-[300px] xl:w-[417px]"
         />
-        <div className={`${oswald.className} max-w-4xl flex-1`}>
+        <div className="font-oswald max-w-4xl flex-1">
           <div className="text-center text-blue-800 sticky top-0 z-10 bg-white">
             <div className="font-bold mb-4">
               <h2>UỶ BAN NHÂN DÂN XÃ XUÂN SƠN NAM</h2>
               <h2>BAN CHỈ ĐẠO ĐÓN TẾT</h2>
             </div>
             <div
-              className={`${pacifico.className} mb-4 capitalize leading-normal text-rose-500 text-2xl md:text-4xl`}
+              className="font-pacifico mb-4 capitalize leading-normal text-rose-500 text-2xl md:text-4xl"
             >
               <h1>Văn Nghệ</h1>
               <h2>Mừng đảng mừng xuân quý mão 2023</h2>
@@ -110,13 +106,13 @@ export default function Home({ sponsorshipList, date }: any) {
               </h2>
             </div>
             <h3 className="mb-6">Xuân Sơn Nam, ngày 17 tháng 01 năm 2023</h3>
-            <p style={roboto.style} className="ml-2 text-left text-black">
+            <p className="font-roboto ml-2 text-left text-black">
               Tổng số tiền quyên góp (cập nhật lúc {date}
               ):
             </p>
             <h2 className="font-bold text-yellow-600 mb-4 text-3xl md:text-4xl xl:text-5xl">{total}</h2>
 
-            <p style={roboto.style} className="mb-4 ml-2 text-left text-black">
+            <p className="font-roboto mb-4 ml-2 text-left text-black">
               Chân thành cảm ơn các mạnh thường quân:
             </p>
 
@@ -136,7 +132,7 @@ export default function Home({ sponsorshipList, date }: any) {
               </thead>
             </table>
           </div>
-          <div className={roboto.className}>
+          <div className="font-roboto">
             <div>
               <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500">
@@ -175,9 +171,9 @@ export async function getStaticProps() {
   const sponsorshipList = await getSponsorshipList();
   return {
     props: {
-      sponsorshipList, //.slice(1, emojis.length), // remove sheet header
+      sponsorshipList,
       date: new Date().toLocaleString(),
     },
-    revalidate: 1, // In seconds
+    revalidate: 60 * 60, // In seconds
   };
 }
