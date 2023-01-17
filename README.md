@@ -1,4 +1,4 @@
-This project using [Next.js](https://nextjs.org/) with [TailwindCSS](tailwindcss.com)
+This project using [Next.js](https://nextjs.org/) with [TailwindCSS](tailwindcss.com) and [Google Sheets API](https://developers.google.com/sheets/api/guides/concepts)
 
 ## Getting Started
 .env file
